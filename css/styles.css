@@ -1,36 +1,29 @@
-/* Basic CSS styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    perspective: 1000px;  /* Perspectiva para la animación 3D */
+}
 
 .page {
     position: absolute;
     width: 100%;
     height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 1s ease-in-out;  /* Transición para la animación de rotación */
-}
-
-/* Ocultar la página de manera controlada */
-.page.hidden {
-    display: none;  /* Esta clase se añadirá para ocultar la página */
-}
-
-/* Agregar perspectiva al contenedor */
-body {
-    perspective: 1000px;
-    background-color: #f0f0f0;
-}
-
-.story-content {
-    display: none;
     padding: 20px;
-    background: white;
-    margin: 20px auto;
-    width: 80%;
+    background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d;  /* Necesario para aplicar animaciones 3D */
+    transform: rotateY(0deg);
+    transition: transform 1s ease-in-out;  /* Animación de rotación */
+    display: none;
 }
-.active {
+
+.page.active {
     display: block;
 }
+
 button {
     padding: 10px 20px;
     background-color: #4CAF50;
@@ -40,6 +33,8 @@ button {
     cursor: pointer;
     margin-top: 10px;
 }
+
 button:hover {
     background-color: #45a049;
 }
+
