@@ -3,7 +3,6 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    perspective: 1000px;  /* Perspectiva para la animación 3D */
 }
 
 .page {
@@ -14,14 +13,7 @@ body {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transform-style: preserve-3d;  /* Necesario para aplicar animaciones 3D */
-    transform: rotateY(0deg);
-    transition: transform 1s ease-in-out;  /* Animación de rotación */
-    display: none;
-}
-
-.page.active {
-    display: block;
+    display: none; /* Por defecto oculto */
 }
 
 button {
@@ -37,4 +29,6 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+
 
