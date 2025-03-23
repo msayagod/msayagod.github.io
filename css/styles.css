@@ -5,7 +5,7 @@ html, body {
     margin: 0;
     display: flex;
     flex-direction: column; /* Asegura que header, container y footer se alineen verticalmente */
-    justify-content: space-between; /* Distribuye el espacio entre header y footer */
+    justify-content: center; /* Distribuye el espacio entre header y footer */
     align-items: center;
     background-color: #f5f5f5;
     overflow: auto;
@@ -20,7 +20,7 @@ h1, h3 {
 #container {
     width: 100%;
     height: 50px;
-    flex: 1; /* Hace que el container ocupe todo el espacio restante */
+    flex-grow: 1; /* Empuja el footer hacia abajo */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,24 +33,21 @@ h1, h3 {
 
 /* 📖 Páginas del libro con diseño moderno */
 .page {
-    width: 100%;
-    max-width: 700px;
-    height: 90%;
+    width: 90%;
+    max-width: 600px;
+    min-height: 85vh; /* Se asegura de que la página siempre tenga espacio suficiente */
     padding: 20px;
-    background: #f8f1e1; /* Color beige cálido similar a papel envejecido */
+    background: #f8f1e1;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra más suave y realista */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: none;
     flex-direction: column;
-    justify-content: flex-start; /* Asegura que el contenido comienza arriba */
-    align-items: center; /* Mantiene una alineación equilibrada */
-    text-align: left; /* Alineación natural del texto */
-    line-height: 1.4; /* Mejora la legibilidad */
-    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    line-height: 1.5;
+    overflow: hidden; /* Evita que el contenido se salga */
+    position: relative; /* Se elimina position absolute para evitar que flote fuera */
 }
 
 /* 📌 Mostrar solo la primera página */
@@ -148,9 +145,8 @@ header {
 /* 📌 FOOTER: Bonito y minimalista */
 footer {
     width: 100%;
+    height: 60px;
     text-align: center;
-    position: absolute;
-    bottom: 0;
     background: #333;
     color: white;
     padding: 5px 0;
