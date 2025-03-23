@@ -1,161 +1,74 @@
 /* Asegura que el body ocupe toda la pantalla y use Flexbox */
 html, body {
-    height: 100vh;
-    width: 100%;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
     margin: 0;
     display: flex;
-    flex-direction: column; /* Asegura que header, container y footer se alineen verticalmente */
-    justify-content: center; /* Distribuye el espacio entre header y footer */
-    align-items: center;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
     background-color: #f5f5f5;
-    overflow: auto;
 }
 
-h1, h3 {
-    margin-bottom: 5px; /* Espacio arriba y abajo */
-}
-
-
-/* Contenedor del libro */
+/* Contenedor que mantiene el contenido centrado */
 #container {
-    width: 100%;
-    height: 50px;
-    flex-grow: 1; /* Empuja el footer hacia abajo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow-x: hidden;
-    overflow-y: auto;
-    margin-top: 60px; /* Baja el contenido para que no lo tape el header */
-    margin-bottom: 30px; /* Sube el contenido para que no lo tape el footer */
+    width: 80%; /* Ajusta el ancho del contenido */
+    max-width: 800px; /* Evita que sea demasiado grande */
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-/* 📖 Páginas del libro con diseño moderno */
+/* Asegura que cada página esté centrada */
 .page {
-    width: 90%;
-    max-width: 600px;
-    min-height: 85vh; /* Se asegura de que la página siempre tenga espacio suficiente */
-    padding: 20px;
-    background: #f8f1e1;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    display: none;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: left;
-    line-height: 1.5;
-    overflow: hidden; /* Evita que el contenido se salga */
-    position: relative; /* Se elimina position absolute para evitar que flote fuera */
+    width: 100%;
+    max-width: 700px; /* Tamaño ideal para leer sin que sea muy ancho */
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: none; /* Ocultamos todas las páginas por defecto */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Centra la página correctamente */
 }
 
-/* 📌 Mostrar solo la primera página */
+/* Mostrar solo la primera página */
 .page:first-of-type {
-    display: flex;
+    display: block;
 }
 
-/* 📌 Ajustes en los párrafos para reducir espacios */
-.page p {
-    margin-bottom: 0px; /* Menos separación entre párrafos */
-    text-indent: 15px; /* Sangría más sutil */
+/* Ajuste de los títulos y párrafos */
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color:red !important;
 }
 
-/* Clase para desplazar la página actual hacia la izquierda */
-.slide-out {
-    transform: translate(-150%, -50%);
-    opacity: 0;
-}
-
-/* Clase para hacer que la nueva página entre desde la derecha */
-.slide-in {
-    display: flex;
-    transform: translate(50%, -50%);
-    opacity: 0;
-    animation: slideIn 0.6s forwards;
-}
-
-/* Animación para la nueva página */
-@keyframes slideIn {
-    from {
-        transform: translate(50%, -50%);
-        opacity: 0;
-    }
-    to {
-        transform: translate(-50%, -50%);
-        opacity: 1;
-    }
-}
-
-/* 🎨 Mejora del diseño de los botones */
-/* 🎨 Mejoramos el diseño de los botones con más separación */
-.next-btn {
-    display: block; /* Hace que los botones estén uno debajo del otro */
-    padding: 12px 24px;
+p {
     font-size: 1.2em;
-    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Botones de navegación */
+.next-btn {
+    display: block;
+    width: 80%;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 1.2em;
     border: none;
-    border-radius: 8px;
-    background: linear-gradient(to right, #d4af6a, #b88c4a); /* Degradado dorado */
+    background: #3498db;
     color: white;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    margin: 6px auto; /* Agrega espacio arriba y abajo, y los centra */
-    width: 80%; /* Ajusta el ancho del botón */
-    max-width: 300px; /* Evita que sean demasiado anchos */
+    border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
-/* Efecto hover y clic */
 .next-btn:hover {
-    background: linear-gradient(to right, #b88c4a, #a4743b);
-    transform: scale(1.05); /* Hace que el botón crezca un poco */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.next-btn:active {
-    transform: scale(0.95); /* Efecto de presión al hacer clic */
-}
-
-/* 🎉 HEADER: Mensaje de cumpleaños elegante y centrado */
-header {
-    width: 100%;
-    position: fixed; /* Fija el header en la parte superior */
-    top: 0;
-    left: 0;
-    text-align: center;
-    background: linear-gradient(to right, #ffcc70, #ff8a80); /* Degradado cálido */
-    padding: 8px 0;
-    font-family: 'Georgia', serif; /* Fuente elegante */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* Asegura que el header siempre esté por encima */
-    
-}
-
-.birthday-title {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    margin: 0;
-    letter-spacing: 1.8px;
-}
-
-
-/* 📌 FOOTER: Bonito y minimalista */
-footer {
-    width: 100%;
-    height: 60px;
-    text-align: center;
-    background: #333;
-    color: white;
-    padding: 5px 0;
-    font-size: 1em;
-    font-family: 'Arial', sans-serif;
-}
-
-.footer-text {
-    margin: 0;
-    font-weight: bold;
-    opacity: 0.8;
+    background: #2980b9;
 }
