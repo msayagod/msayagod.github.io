@@ -6,9 +6,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    /* Asegura que header, container y footer se alineen verticalmente */
     justify-content: space-between;
-    /* Distribuye el espacio entre header y footer */
     align-items: center;
     background-color: #f5f5f5;
     overflow: auto;
@@ -17,9 +15,7 @@ body {
 h1,
 h3 {
     margin-bottom: 5px;
-    /* Espacio arriba y abajo */
 }
-
 
 /* 🎨 Configuración de contenedor que aloja las tarjetas (páginas) */
 #container {
@@ -30,12 +26,12 @@ h3 {
     margin-top: 20px;
     padding: 10px 0;
 }
+
 /* 🎨 Estilo de las tarjetas (páginas) en formato horizontal */
 .page {
     display: inline-flex; /* Alineación horizontal */
     flex-direction: column;
-    width: auto; /* Hacer que las tarjetas tengan un tamaño ajustable */
-    max-width: 250px; /* Máximo ancho de cada tarjeta */
+    width: 300px; /* Tamaño más adecuado para las tarjetas */
     height: auto;
     padding: 10px;
     background: #f8f1e1;
@@ -62,11 +58,11 @@ h3 {
 
 /* Párrafos dentro de las tarjetas */
 .page p {
-    margin: 5px 0; /* Menos margen entre párrafos */
+    margin: 5px 0;
     text-indent: 10px; /* Mantener sangría sutil */
     text-overflow: ellipsis; /* Si el texto es muy largo, se recorta */
     white-space: nowrap; /* Evitar que el texto se rompa en varias líneas */
-    overflow: hidden; /* Ocultar el desbordamiento de texto */
+    overflow: hidden;
 }
 
 /* 🎨 Botón dentro de la tarjeta */
@@ -76,14 +72,14 @@ h3 {
     font-size: 1em;
     font-weight: bold;
     border: none;
-    border-radius: 25px; /* Bordes suaves */
+    border-radius: 25px;
     background: linear-gradient(to right, #f1e0c6, #d8c6b3);
     color: #333;
     cursor: pointer;
     margin: 6px auto;
     width: 80%;
-    max-width: 200px; /* Ajustar el tamaño del botón dentro de la tarjeta */
-    text-align: center; /* Centrado del texto en el botón */
+    max-width: 200px;
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -117,8 +113,8 @@ h3 {
 /* Efecto hover en el botón */
 .page .next-btn:hover {
     background: linear-gradient(to right, #d8c6b3, #f1e0c6);
-    transform: scale(1.05); /* Ligero aumento de tamaño */
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Efecto de clic */
@@ -130,13 +126,13 @@ h3 {
 
 /* 🎨 Segunda tarjeta "spicy" (botón con fuego) */
 .page .next-btn:nth-of-type(2) {
-    background: linear-gradient(to right, #ff7f7f, #ff4c4c); /* Rojo/picante */
+    background: linear-gradient(to right, #ff7f7f, #ff4c4c);
     color: white;
 }
 
 /* Fuego que aparece en el segundo botón "spicy" */
 .page .next-btn:nth-of-type(2)::before {
-    content: '🔥'; /* Fuego */
+    content: '🔥';
     position: absolute;
     left: 10px;
     top: 50%;
@@ -152,7 +148,7 @@ h3 {
 
 /* Botón spicy con hover diferente */
 .page .next-btn:nth-of-type(2):hover {
-    background: linear-gradient(to right, #ff4c4c, #e94e2f); /* Fuego más intenso */
+    background: linear-gradient(to right, #ff4c4c, #e94e2f);
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
     transform: scale(1.1);
 }
@@ -161,22 +157,16 @@ h3 {
 header {
     width: 100%;
     position: fixed;
-    /* Fija el header en la parte superior */
     top: 0;
     left: 0;
     text-align: center;
     justify-content: space-between;
-    /* Distribuye el título y el botón */
     align-items: center;
     background: linear-gradient(to right, #ffcc70, #ff8a80);
-    /* Degradado cálido */
     padding: 8px 0;
     font-family: 'Georgia', serif;
-    /* Fuente elegante */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    /* Asegura que el header siempre esté por encima */
-
 }
 
 .birthday-title {
@@ -203,7 +193,6 @@ header {
     background: #d43d3d;
 }
 
-
 /* 📌 FOOTER: Bonito y minimalista */
 footer {
     width: 100%;
@@ -223,31 +212,10 @@ footer {
     opacity: 0.8;
 }
 
+/* 📌 Ajustes en móviles */
 @media (max-width: 600px) {
-
-    /* 📌 Ajustar el header para que sea más compacto en móvil */
-    header {
-        padding: 1px 5px;
-        /* Reduce el espacio alrededor del texto */
-    }
-
-    .birthday-title {
-        font-size: 1.1em;
-        /* Reduce el tamaño del texto en el header */
-        letter-spacing: .5px;
-        /* Reduce el espacio entre letras */
-    }
-
-    .start-again-btn {
-        padding: 4px 10px;
-        /* Botón más pequeño */
-        font-size: 0.7em;
-    }
-
-    /* 📌 Asegurar que el texto no se salga de la página */
     .page {
-        width: 80%;
-        max-width: 220px;
+        width: 80%; /* Mantiene un tamaño adecuado */
         margin: 8px;
     }
 
@@ -256,34 +224,21 @@ footer {
         max-width: 90%;
         text-align: center;
         word-wrap: break-word;
-        overflow-wrap: break-word;
-        white-space: normal;
-        line-height: 1.2;
-        margin-top: 10px;
-        /* Asegura que haya espacio por arriba */
-        margin-bottom: 15px;
     }
 
     .page p {
         font-size: 0.95em;
-        /* Reduce un poco el tamaño del texto */
         text-indent: 10px;
-        /* Ajusta la sangría en móviles */
     }
 
-
-
-    /* 📌 Hacer que el footer siempre esté abajo */
     footer {
         position: fixed;
-        /* Lo fija en la parte inferior */
         bottom: 0;
         left: 0;
         width: 100%;
         background: #333;
         padding: 8px 0;
         font-size: 0.9em;
-        /* Reduce el tamaño del texto en móviles */
     }
 
     .page .next-btn {
@@ -297,39 +252,5 @@ footer {
         width: 90%;
         max-width: 280px;
         font-size: 1.1em;
-    }
-
-    .button-container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        /* Coloca los botones en vertical */
-        align-items: center;
-        /* Centra los botones dentro de la página */
-        padding: 15px 0;
-        /* Agrega espacio arriba y abajo */
-        margin-top: auto;
-        /* Asegura que queden en la parte baja de la página */
-    }
-
-    /* 📌 Corregir la animación para móviles */
-    .slide-in {
-        display: flex;
-        transform: translateY(50px);
-        /* Hace que la página entre desde abajo */
-        opacity: 0;
-        animation: slideInMobile 0.6s forwards;
-    }
-
-    @keyframes slideInMobile {
-        from {
-            transform: translateY(50px);
-            opacity: 0;
-        }
-
-        to {
-            transform: translateY(0);
-            opacity: 1;
-        }
     }
 }
