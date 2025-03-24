@@ -112,7 +112,7 @@ h3 {
 .next-btn {
     display: block; /* Hace que ocupe todo el ancho disponible */
     padding: 10px 0; /* Espaciado vertical como un párrafo normal */
-    font-size: .9em; /* Tamaño de letra igual que el de los párrafos */
+    font-size: .95em; /* Tamaño de letra igual que el de los párrafos */
     font-weight: normal; /* Sin negrita */
     color: #ff4d4d; /* Color del texto */
     text-align: center; /* Centra el texto */
