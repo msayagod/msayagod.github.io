@@ -216,6 +216,14 @@ footer {
         text-indent: 10px; /* Ajusta la sangría en móviles */
     }
 
+    .page h1 {
+        font-size: 1.4em; /* Reduce el tamaño del título */
+        text-align: center; /* Asegura que el título esté bien alineado */
+        word-wrap: break-word; /* Permite que el texto se divida en varias líneas si es necesario */
+        overflow-wrap: break-word;
+        margin-bottom: 10px; /* Asegura que no quede pegado al texto siguiente */
+    }
+
     /* 📌 Hacer que el footer siempre esté abajo */
     footer {
         position: fixed; /* Lo fija en la parte inferior */
