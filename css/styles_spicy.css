@@ -248,25 +248,23 @@ footer {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Centra el contenido en la pantalla */
+        justify-content: space-between; /* Asegura que el contenido y los botones queden bien distribuidos */
         align-items: center;
-        padding-top: 0; /* Elimina el espacio superior extra */
+        padding: 60px 20px 20px; /* Agrega más espacio arriba */
+        box-sizing: border-box;
+        text-align: center;
     }
 
     .page h1 {
         font-size: 1.5em;
         max-width: 90%;
-        text-align: center;
         line-height: 1.2;
-        margin-top: 10px;
-        margin-bottom: 15px;
+        margin: 0 0 15px 0; /* Elimina márgenes superiores grandes */
     }
 
     .page p {
-        font-size: 0.95em;
-        /* Reduce un poco el tamaño del texto */
-        text-indent: 10px;
-        /* Ajusta la sangría en móviles */
+        font-size: 1em;
+        margin: 0 10px;
     }
 
 
@@ -284,14 +282,13 @@ footer {
         /* Reduce el tamaño del texto en móviles */
     }
 
-    /* 📌 Ajustar botones para que se vean bien en móviles */
+    /* Asegura que los botones no queden demasiado arriba o en el medio */
     .next-btn {
         width: 90%;
-        /* Hace que los botones ocupen el ancho correcto */
         max-width: 280px;
-        /* Evita que sean demasiado anchos */
-        padding: 10px;
-        font-size: 1em;
+        padding: 12px;
+        font-size: 1.1em;
+        margin-top: auto; /* Hace que los botones queden al final de la página */
     }
 
     .button-container {
@@ -304,21 +301,21 @@ footer {
     }
 
      /* Ajustar la animación de transición */
-     .slide-in {
+    .slide-in {
         display: flex;
-        transform: translate(-50%, 0); /* Corrige la posición */
+        transform: translateY(50px);
         opacity: 0;
         animation: slideInMobile 0.6s forwards;
     }
 
     @keyframes slideInMobile {
         from {
-            transform: translate(-50%, 50px);
+            transform: translateY(50px);
             opacity: 0;
         }
 
         to {
-            transform: translate(-50%, 0);
+            transform: translateY(0);
             opacity: 1;
         }
     }
