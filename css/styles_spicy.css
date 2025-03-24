@@ -21,50 +21,32 @@ h3 {
 }
 
 
-/* Contenedor del libro */
+/* 🎨 Configuración de contenedor que aloja las tarjetas (páginas) */
 #container {
-    width: 100%;
-    height: 50px;
-    flex: 1;
-    /* Hace que el container ocupe todo el espacio restante */
     display: flex;
+    flex-wrap: nowrap; /* Las tarjetas no se envuelven */
     justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow-x: hidden;
-    overflow-y: auto;
-    margin-top: 60px;
-    /* Baja el contenido para que no lo tape el header */
-    margin-bottom: 30px;
-    /* Sube el contenido para que no lo tape el footer */
+    overflow-x: auto; /* Permitir desplazamiento horizontal si es necesario */
+    margin-top: 20px;
+    padding: 10px 0;
 }
-
-/* 📖 Páginas del libro con diseño moderno */
+/* 🎨 Estilo de las tarjetas (páginas) en formato horizontal */
 .page {
-    width: 100%;
-    max-width: 700px;
-    height: 90%;
-    padding: 20px;
-    background: #f8f1e1;
-    /* Color beige cálido similar a papel envejecido */
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    /* Sombra más suave y realista */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
+    display: inline-flex; /* Alineación horizontal */
     flex-direction: column;
-    justify-content: flex-start;
-    /* Asegura que el contenido comienza arriba */
-    align-items: center;
-    /* Mantiene una alineación equilibrada */
+    width: auto; /* Hacer que las tarjetas tengan un tamaño ajustable */
+    max-width: 250px; /* Máximo ancho de cada tarjeta */
+    height: auto;
+    padding: 10px;
+    background: #f8f1e1;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    position: relative;
     text-align: left;
-    /* Alineación natural del texto */
     line-height: 1.4;
-    /* Mejora la legibilidad */
-    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    margin: 10px; /* Espaciado entre las tarjetas */
+    overflow: hidden; /* Evitar que el contenido se desborde */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
 }
 
 /* 📌 Mostrar solo la primera página */
@@ -72,12 +54,37 @@ h3 {
     display: flex;
 }
 
-/* 📌 Ajustes en los párrafos para reducir espacios */
+/* Agregar sutil efecto de hover para las tarjetas */
+.page:hover {
+    transform: translateY(-5px); /* Elevar ligeramente al pasar el ratón */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Sombra más profunda */
+}
+
+/* Párrafos dentro de las tarjetas */
 .page p {
-    margin-bottom: 0px;
-    /* Menos separación entre párrafos */
-    text-indent: 15px;
-    /* Sangría más sutil */
+    margin: 5px 0; /* Menos margen entre párrafos */
+    text-indent: 10px; /* Mantener sangría sutil */
+    text-overflow: ellipsis; /* Si el texto es muy largo, se recorta */
+    white-space: nowrap; /* Evitar que el texto se rompa en varias líneas */
+    overflow: hidden; /* Ocultar el desbordamiento de texto */
+}
+
+/* 🎨 Botón dentro de la tarjeta */
+.page .next-btn {
+    display: block;
+    padding: 8px 16px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px; /* Bordes suaves */
+    background: linear-gradient(to right, #f1e0c6, #d8c6b3);
+    color: #333;
+    cursor: pointer;
+    margin: 6px auto;
+    width: 80%;
+    max-width: 200px; /* Ajustar el tamaño del botón dentro de la tarjeta */
+    text-align: center; /* Centrado del texto en el botón */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Clase para desplazar la página actual hacia la izquierda */
@@ -107,35 +114,11 @@ h3 {
     }
 }
 
-/* 🎨 Botones estilizados (como tarjetas elegantes) */
-.next-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 24px;
-    font-size: 1.2em;
-    font-weight: bold;
-    border: 2px solid transparent;
-    border-radius: 25px; /* Bordes suaves para un look moderno */
-    background: linear-gradient(to right, #f8f1e1, #f1e0c6); /* Fondo suave */
-    color: #333;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    margin: 8px auto;
-    width: 80%;
-    max-width: 300px;
-    box-sizing: border-box;
-    text-align: center; /* Alineación centrada */
-    border-radius: 25px;
-    position: relative; /* Para usar el fuego como pseudo-elemento */
-}
-
-/* Efecto hover con sombra suave */
-.next-btn:hover {
-    background: linear-gradient(to right, #f1e0c6, #d1bfa7);
-    transform: scale(1.05);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+/* Efecto hover en el botón */
+.page .next-btn:hover {
+    background: linear-gradient(to right, #d8c6b3, #f1e0c6);
+    transform: scale(1.05); /* Ligero aumento de tamaño */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 /* Efecto de clic */
@@ -145,7 +128,7 @@ h3 {
     box-shadow: none;
 }
 
-/* 🎨 Botón spicy (segundo botón en cada página) */
+/* 🎨 Segunda tarjeta "spicy" (botón con fuego) */
 .page .next-btn:nth-of-type(2) {
     background: linear-gradient(to right, #ff7f7f, #ff4c4c); /* Rojo/picante */
     color: white;
@@ -263,13 +246,9 @@ footer {
 
     /* 📌 Asegurar que el texto no se salga de la página */
     .page {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        padding-top: 80px;
-        /* Deja más espacio para el h1 */
+        width: 80%;
+        max-width: 220px;
+        margin: 8px;
     }
 
     .page h1 {
@@ -307,11 +286,10 @@ footer {
         /* Reduce el tamaño del texto en móviles */
     }
 
-    .next-btn {
+    .page .next-btn {
         width: 90%;
-        max-width: 280px;
-        padding: 12px 20px;
-        font-size: 1.1em;
+        max-width: 180px;
+        font-size: 0.9em;
     }
 
     /* Asegura que los botones "spicy" también sean responsivos */
