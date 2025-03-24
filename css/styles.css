@@ -199,23 +199,24 @@ footer {
 
     /* 📌 Asegurar que el texto no se salga de la página */
     .page {
-        min-height: 100vh; /* Asegura que la página tenga espacio suficiente */
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start; /* Se asegura de que el contenido empiece arriba */
+        justify-content: flex-start;
         align-items: center;
-        padding-top: 60px; /* Deja más espacio para el h1 */
+        padding-top: 80px; /* Deja más espacio para el h1 */
     }
 
     .page h1 {
-        font-size: 1.5em; /* Reduce el tamaño del título solo en móviles */
-        max-width: 90%; /* Asegura que el texto no se salga del contenedor */
+        font-size: 1.5em;
+        max-width: 90%;
         text-align: center;
         word-wrap: break-word;
         overflow-wrap: break-word;
-        white-space: normal; /* Permite saltos de línea */
-        line-height: 1.2; /* Reduce la separación entre líneas para ocupar menos espacio */
-        margin-bottom: 15px; /* Separa el título del contenido */
+        white-space: normal;
+        line-height: 1.2;
+        margin-top: 10px; /* Asegura que haya espacio por arriba */
+        margin-bottom: 15px;
     }
     .page p {
         font-size: 0.95em; /* Reduce un poco el tamaño del texto */
@@ -237,11 +238,21 @@ footer {
 
     /* 📌 Ajustar botones para que se vean bien en móviles */
     .next-btn {
-        width: 100%; /* Ocupa todo el ancho disponible */
-        max-width: 280px; /* No sean demasiado grandes */
-        padding: 10px; /* Ajusta el padding */
-        font-size: 1em; /* Reduce un poco el tamaño en móviles */
+        width: 90%; /* Hace que los botones ocupen el ancho correcto */
+        max-width: 280px; /* Evita que sean demasiado anchos */
+        padding: 10px;
+        font-size: 1em;
     }
+
+    .button-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column; /* Coloca los botones en vertical */
+        align-items: center; /* Centra los botones dentro de la página */
+        padding: 15px 0; /* Agrega espacio arriba y abajo */
+        margin-top: auto; /* Asegura que queden en la parte baja de la página */
+    }
+
   /* 📌 Corregir la animación para móviles */
   .slide-in {
     display: flex;
