@@ -125,6 +125,11 @@ h3 {
     line-height: 1.5; /* Espaciado entre las líneas */
 }
 
+.next-btn p {
+    margin-top: 0;
+}
+
+
 /* Efecto hover para resaltar el "botón" */
 .next-btn:hover {
     background-color: #f0f0f0; /* Fondo muy sutil al pasar el mouse */
@@ -144,18 +149,13 @@ h3 {
     color: white;
 }
 
-/* Fuego que aparece en el segundo botón "spicy" */
-.page .next-btn:nth-of-type(2)::before {
-    content: '🔥';
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1em;
-    opacity: 0.8;
-    transition: transform 0.3s ease;
+/* Efecto hover para resaltar el "botón" */
+.next-btn:nth-of-type(2):hover {
+    background-color: #e68b8b; /* Fondo muy sutil al pasar el mouse */
+    color: #000000; /* Cambio de color del texto */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 
 /* 🎉 HEADER: Mensaje de cumpleaños elegante y centrado */
 header {
