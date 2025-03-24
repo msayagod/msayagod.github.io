@@ -180,3 +180,58 @@ footer {
     font-weight: bold;
     opacity: 0.8;
 }
+
+@media (max-width: 600px) {
+    /* 📌 Ajustar el header para que sea más compacto en móvil */
+    header {
+        padding: 5px 10px; /* Reduce el espacio alrededor del texto */
+    }
+
+    .birthday-title {
+        font-size: 1.4em; /* Reduce el tamaño del texto en el header */
+        letter-spacing: 1px; /* Reduce el espacio entre letras */
+    }
+
+    .start-again-btn {
+        padding: 6px 12px; /* Botón más pequeño */
+        font-size: 0.9em;
+    }
+
+    /* 📌 Asegurar que el texto no se salga de la página */
+    .page {
+        width: 95%; /* Hace que la página se ajuste mejor en móvil */
+        max-width: 500px; /* Limita el ancho en pantallas pequeñas */
+        height: auto; /* Permite que la altura se adapte al contenido */
+        padding: 15px; /* Reduce el padding para evitar espacios grandes */
+        overflow: hidden; /* Evita que el texto se desborde */
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none; /* Elimina el centrado absoluto en móvil */
+        margin: 70px auto 20px auto; /* Separa del header y deja espacio antes del footer */
+    }
+
+    .page p {
+        font-size: 0.95em; /* Reduce un poco el tamaño del texto */
+        text-indent: 10px; /* Ajusta la sangría en móviles */
+    }
+
+    /* 📌 Hacer que el footer siempre esté abajo */
+    footer {
+        position: fixed; /* Lo fija en la parte inferior */
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #333;
+        padding: 8px 0;
+        font-size: 0.9em; /* Reduce el tamaño del texto en móviles */
+    }
+
+    /* 📌 Ajustar botones para que se vean bien en móviles */
+    .next-btn {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        max-width: 280px; /* No sean demasiado grandes */
+        padding: 10px; /* Ajusta el padding */
+        font-size: 1em; /* Reduce un poco el tamaño en móviles */
+    }
+}
