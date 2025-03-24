@@ -184,17 +184,17 @@ footer {
 @media (max-width: 600px) {
     /* 📌 Ajustar el header para que sea más compacto en móvil */
     header {
-        padding: 5px 10px; /* Reduce el espacio alrededor del texto */
+        padding: 1px 5px; /* Reduce el espacio alrededor del texto */
     }
 
     .birthday-title {
-        font-size: 1.4em; /* Reduce el tamaño del texto en el header */
-        letter-spacing: 1px; /* Reduce el espacio entre letras */
+        font-size: 1.1em; /* Reduce el tamaño del texto en el header */
+        letter-spacing: .5px; /* Reduce el espacio entre letras */
     }
 
     .start-again-btn {
-        padding: 6px 12px; /* Botón más pequeño */
-        font-size: 0.9em;
+        padding: 4px 10px; /* Botón más pequeño */
+        font-size: 0.7em;
     }
 
     /* 📌 Asegurar que el texto no se salga de la página */
