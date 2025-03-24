@@ -51,6 +51,10 @@ function restartStory() {
     document.querySelector(".page:first-of-type").style.display = "flex";
 }
 
+function startStory(url) {
+    window.location.href = url;
+}
+
 
 
 

@@ -1,0 +1,38 @@
+/* Asegura que el body ocupe toda la pantalla y use Flexbox */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.story-btn {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.story-btn:hover {
+    transform: scale(1.1);
+}
