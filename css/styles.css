@@ -1,18 +1,23 @@
 /* Asegura que el body ocupe toda la pantalla y use Flexbox */
-html, body {
+html,
+body {
     height: 100vh;
     width: 100%;
     margin: 0;
     display: flex;
-    flex-direction: column; /* Asegura que header, container y footer se alineen verticalmente */
-    justify-content: space-between; /* Distribuye el espacio entre header y footer */
+    flex-direction: column;
+    /* Asegura que header, container y footer se alineen verticalmente */
+    justify-content: space-between;
+    /* Distribuye el espacio entre header y footer */
     align-items: center;
     background-color: #f5f5f5;
     overflow: auto;
 }
 
-h1, h3 {
-    margin-bottom: 5px; /* Espacio arriba y abajo */
+h1,
+h3 {
+    margin-bottom: 5px;
+    /* Espacio arriba y abajo */
 }
 
 
@@ -20,15 +25,18 @@ h1, h3 {
 #container {
     width: 100%;
     height: 50px;
-    flex: 1; /* Hace que el container ocupe todo el espacio restante */
+    flex: 1;
+    /* Hace que el container ocupe todo el espacio restante */
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
-    margin-top: 60px; /* Baja el contenido para que no lo tape el header */
-    margin-bottom: 30px; /* Sube el contenido para que no lo tape el footer */
+    margin-top: 60px;
+    /* Baja el contenido para que no lo tape el header */
+    margin-bottom: 30px;
+    /* Sube el contenido para que no lo tape el footer */
 }
 
 /* 📖 Páginas del libro con diseño moderno */
@@ -37,19 +45,25 @@ h1, h3 {
     max-width: 700px;
     height: 90%;
     padding: 20px;
-    background: #f8f1e1; /* Color beige cálido similar a papel envejecido */
+    background: #f8f1e1;
+    /* Color beige cálido similar a papel envejecido */
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra más suave y realista */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    /* Sombra más suave y realista */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
     flex-direction: column;
-    justify-content: flex-start; /* Asegura que el contenido comienza arriba */
-    align-items: center; /* Mantiene una alineación equilibrada */
-    text-align: left; /* Alineación natural del texto */
-    line-height: 1.4; /* Mejora la legibilidad */
+    justify-content: flex-start;
+    /* Asegura que el contenido comienza arriba */
+    align-items: center;
+    /* Mantiene una alineación equilibrada */
+    text-align: left;
+    /* Alineación natural del texto */
+    line-height: 1.4;
+    /* Mejora la legibilidad */
     transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
 }
 
@@ -60,8 +74,10 @@ h1, h3 {
 
 /* 📌 Ajustes en los párrafos para reducir espacios */
 .page p {
-    margin-bottom: 0px; /* Menos separación entre párrafos */
-    text-indent: 15px; /* Sangría más sutil */
+    margin-bottom: 0px;
+    /* Menos separación entre párrafos */
+    text-indent: 15px;
+    /* Sangría más sutil */
 }
 
 /* Clase para desplazar la página actual hacia la izquierda */
@@ -84,6 +100,7 @@ h1, h3 {
         transform: translate(50%, -50%);
         opacity: 0;
     }
+
     to {
         transform: translate(-50%, -50%);
         opacity: 1;
@@ -93,48 +110,60 @@ h1, h3 {
 /* 🎨 Mejora del diseño de los botones */
 /* 🎨 Mejoramos el diseño de los botones con más separación */
 .next-btn {
-    display: block; /* Hace que los botones estén uno debajo del otro */
+    display: block;
+    /* Hace que los botones estén uno debajo del otro */
     padding: 12px 24px;
     font-size: 1.2em;
     font-weight: bold;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(to right, #d4af6a, #b88c4a); /* Degradado dorado */
+    background: linear-gradient(to right, #d4af6a, #b88c4a);
+    /* Degradado dorado */
     color: white;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    margin: 6px auto; /* Agrega espacio arriba y abajo, y los centra */
-    width: 80%; /* Ajusta el ancho del botón */
-    max-width: 300px; /* Evita que sean demasiado anchos */
+    margin: 6px auto;
+    /* Agrega espacio arriba y abajo, y los centra */
+    width: 80%;
+    /* Ajusta el ancho del botón */
+    max-width: 300px;
+    /* Evita que sean demasiado anchos */
 }
 
 /* Efecto hover y clic */
 .next-btn:hover {
     background: linear-gradient(to right, #b88c4a, #a4743b);
-    transform: scale(1.05); /* Hace que el botón crezca un poco */
+    transform: scale(1.05);
+    /* Hace que el botón crezca un poco */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .next-btn:active {
-    transform: scale(0.95); /* Efecto de presión al hacer clic */
+    transform: scale(0.95);
+    /* Efecto de presión al hacer clic */
 }
 
 /* 🎉 HEADER: Mensaje de cumpleaños elegante y centrado */
 header {
     width: 100%;
-    position: fixed; /* Fija el header en la parte superior */
+    position: fixed;
+    /* Fija el header en la parte superior */
     top: 0;
     left: 0;
     text-align: center;
-    justify-content: space-between; /* Distribuye el título y el botón */
+    justify-content: space-between;
+    /* Distribuye el título y el botón */
     align-items: center;
-    background: linear-gradient(to right, #ffcc70, #ff8a80); /* Degradado cálido */
+    background: linear-gradient(to right, #ffcc70, #ff8a80);
+    /* Degradado cálido */
     padding: 8px 0;
-    font-family: 'Georgia', serif; /* Fuente elegante */
+    font-family: 'Georgia', serif;
+    /* Fuente elegante */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* Asegura que el header siempre esté por encima */
-    
+    z-index: 1000;
+    /* Asegura que el header siempre esté por encima */
+
 }
 
 .birthday-title {
@@ -182,18 +211,23 @@ footer {
 }
 
 @media (max-width: 600px) {
+
     /* 📌 Ajustar el header para que sea más compacto en móvil */
     header {
-        padding: 1px 5px; /* Reduce el espacio alrededor del texto */
+        padding: 1px 5px;
+        /* Reduce el espacio alrededor del texto */
     }
 
     .birthday-title {
-        font-size: 1.1em; /* Reduce el tamaño del texto en el header */
-        letter-spacing: .5px; /* Reduce el espacio entre letras */
+        font-size: 1.1em;
+        /* Reduce el tamaño del texto en el header */
+        letter-spacing: .5px;
+        /* Reduce el espacio entre letras */
     }
 
     .start-again-btn {
-        padding: 4px 10px; /* Botón más pequeño */
+        padding: 4px 10px;
+        /* Botón más pequeño */
         font-size: 0.7em;
     }
 
@@ -204,7 +238,8 @@ footer {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        padding-top: 80px; /* Deja más espacio para el h1 */
+        padding-top: 80px;
+        /* Deja más espacio para el h1 */
     }
 
     .page h1 {
@@ -215,31 +250,39 @@ footer {
         overflow-wrap: break-word;
         white-space: normal;
         line-height: 1.2;
-        margin-top: 10px; /* Asegura que haya espacio por arriba */
+        margin-top: 10px;
+        /* Asegura que haya espacio por arriba */
         margin-bottom: 15px;
     }
+
     .page p {
-        font-size: 0.95em; /* Reduce un poco el tamaño del texto */
-        text-indent: 10px; /* Ajusta la sangría en móviles */
+        font-size: 0.95em;
+        /* Reduce un poco el tamaño del texto */
+        text-indent: 10px;
+        /* Ajusta la sangría en móviles */
     }
 
-    
+
 
     /* 📌 Hacer que el footer siempre esté abajo */
     footer {
-        position: fixed; /* Lo fija en la parte inferior */
+        position: fixed;
+        /* Lo fija en la parte inferior */
         bottom: 0;
         left: 0;
         width: 100%;
         background: #333;
         padding: 8px 0;
-        font-size: 0.9em; /* Reduce el tamaño del texto en móviles */
+        font-size: 0.9em;
+        /* Reduce el tamaño del texto en móviles */
     }
 
     /* 📌 Ajustar botones para que se vean bien en móviles */
     .next-btn {
-        width: 90%; /* Hace que los botones ocupen el ancho correcto */
-        max-width: 280px; /* Evita que sean demasiado anchos */
+        width: 90%;
+        /* Hace que los botones ocupen el ancho correcto */
+        max-width: 280px;
+        /* Evita que sean demasiado anchos */
         padding: 10px;
         font-size: 1em;
     }
@@ -247,24 +290,31 @@ footer {
     .button-container {
         width: 100%;
         display: flex;
-        flex-direction: column; /* Coloca los botones en vertical */
-        align-items: center; /* Centra los botones dentro de la página */
-        padding: 15px 0; /* Agrega espacio arriba y abajo */
-        margin-top: auto; /* Asegura que queden en la parte baja de la página */
+        flex-direction: column;
+        /* Coloca los botones en vertical */
+        align-items: center;
+        /* Centra los botones dentro de la página */
+        padding: 15px 0;
+        /* Agrega espacio arriba y abajo */
+        margin-top: auto;
+        /* Asegura que queden en la parte baja de la página */
     }
 
-  /* 📌 Corregir la animación para móviles */
-  .slide-in {
-    display: flex;
-    transform: translateY(50px); /* Hace que la página entre desde abajo */
-    opacity: 0;
-    animation: slideInMobile 0.6s forwards;
-}
+    /* 📌 Corregir la animación para móviles */
+    .slide-in {
+        display: flex;
+        transform: translateY(50px);
+        /* Hace que la página entre desde abajo */
+        opacity: 0;
+        animation: slideInMobile 0.6s forwards;
+    }
+
     @keyframes slideInMobile {
         from {
             transform: translateY(50px);
             opacity: 0;
         }
+
         to {
             transform: translateY(0);
             opacity: 1;
