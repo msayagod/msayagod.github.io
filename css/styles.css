@@ -234,4 +234,21 @@ footer {
         padding: 10px; /* Ajusta el padding */
         font-size: 1em; /* Reduce un poco el tamaño en móviles */
     }
+  /* 📌 Corregir la animación para móviles */
+  .slide-in {
+    display: flex;
+    transform: translateY(50px); /* Hace que la página entre desde abajo */
+    opacity: 0;
+    animation: slideInMobile 0.6s forwards;
+}
+    @keyframes slideInMobile {
+        from {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
 }
