@@ -108,36 +108,52 @@ h3 {
 }
 
 /* 🎨 Mejora del diseño de los botones */
-/* 🎨 Botones como texto estilizado */
+/* 🎨 Botones como párrafos estilizados */
 .next-btn {
-    display: block;
-    padding: 10px 0; /* Ajuste el padding para hacer que el botón sea como un párrafo */
-    font-size: 1.5em; /* Texto más grande */
+    display: block; /* Hace que ocupe todo el ancho disponible */
+    padding: 10px 0; /* Espaciado vertical como un párrafo normal */
+    font-size: 1em; /* Tamaño de letra igual que el de los párrafos */
     font-weight: normal; /* Sin negrita */
     color: #ff4d4d; /* Color del texto */
-    text-align: center;
-    cursor: pointer;
+    text-align: center; /* Centra el texto */
+    cursor: pointer; /* Indica que es clickeable */
     background-color: transparent; /* Fondo transparente */
-    text-decoration: underline; /* Subrayado como si fuera un enlace */
-    margin: 10px 0; /* Espacio entre los "botones" */
-    width: 100%; /* Se adapta al ancho disponible */
-    max-width: 350px; /* Evita que sea demasiado ancho */
-    word-wrap: break-word; /* Evita que se corte el texto */
-    line-height: 1.5; /* Espaciado entre las líneas para que se vea como un párrafo */
-    font-family: 'Arial', sans-serif; /* Fuente más neutral */
+    text-decoration: none; /* Sin subrayado */
+    margin: 10px 0; /* Espacio entre los elementos */
+    width: 100%; /* Hace que ocupe todo el ancho */
+    word-wrap: break-word; /* Evita que el texto se corte */
+    line-height: 1.5; /* Espaciado entre las líneas */
 }
 
 /* Efecto hover para resaltar el "botón" */
 .next-btn:hover {
-    background-color: #ffefef; /* Fondo muy sutil cuando pasa el mouse */
-    color: #d43d3d; /* Cambio en el color del texto */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera para dar énfasis */
+    background-color: #f0f0f0; /* Fondo muy sutil al pasar el mouse */
+    color: #d43d3d; /* Cambio de color del texto */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Efecto active (al hacer clic) */
 .next-btn:active {
     transform: scale(0.98); /* Efecto de presión al hacer clic */
+}
+
+/* 🎨 Segunda tarjeta "spicy" (botón con fuego) */
+.page .next-btn:nth-of-type(2) {
+    background: linear-gradient(to right, #ff7f7f, #ff4c4c);
+    color: white;
+}
+
+/* Fuego que aparece en el segundo botón "spicy" */
+.page .next-btn:nth-of-type(2)::before {
+    content: '🔥';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1em;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
 }
 
 
