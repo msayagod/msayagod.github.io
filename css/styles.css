@@ -199,30 +199,30 @@ footer {
 
     /* 📌 Asegurar que el texto no se salga de la página */
     .page {
-        width: 95%; /* Hace que la página se ajuste mejor en móvil */
-        max-width: 500px; /* Limita el ancho en pantallas pequeñas */
-        height: auto; /* Permite que la altura se adapte al contenido */
-        padding: 15px; /* Reduce el padding para evitar espacios grandes */
-        overflow: hidden; /* Evita que el texto se desborde */
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none; /* Elimina el centrado absoluto en móvil */
-        margin: 70px auto 20px auto; /* Separa del header y deja espacio antes del footer */
+        min-height: 100vh; /* Asegura que la página tenga espacio suficiente */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Se asegura de que el contenido empiece arriba */
+        align-items: center;
+        padding-top: 60px; /* Deja más espacio para el h1 */
     }
 
+    .page h1 {
+        font-size: 1.5em; /* Reduce el tamaño del título solo en móviles */
+        max-width: 90%; /* Asegura que el texto no se salga del contenedor */
+        text-align: center;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal; /* Permite saltos de línea */
+        line-height: 1.2; /* Reduce la separación entre líneas para ocupar menos espacio */
+        margin-bottom: 15px; /* Separa el título del contenido */
+    }
     .page p {
         font-size: 0.95em; /* Reduce un poco el tamaño del texto */
         text-indent: 10px; /* Ajusta la sangría en móviles */
     }
 
-    .page h1 {
-        font-size: 1.4em; /* Reduce el tamaño del título */
-        text-align: center; /* Asegura que el título esté bien alineado */
-        word-wrap: break-word; /* Permite que el texto se divida en varias líneas si es necesario */
-        overflow-wrap: break-word;
-        margin-bottom: 10px; /* Asegura que no quede pegado al texto siguiente */
-    }
+    
 
     /* 📌 Hacer que el footer siempre esté abajo */
     footer {
